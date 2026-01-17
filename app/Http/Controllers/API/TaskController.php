@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
@@ -9,8 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\Task\TaskResource;
 use App\Http\Resources\Task\TaskCollection;
 use App\Http\Requests\Task\StoreTaskRequest;
+use App\Http\Requests\Task\UpdateTaskRequest;
 use App\Http\Controllers\API\Base\BaseApiController;
-use App\Models\Task;
 
 class TaskController extends BaseApiController
 {
@@ -43,6 +44,17 @@ class TaskController extends BaseApiController
             return $this->success(new TaskResource($task), 'Task details retrieved');
         } catch (\Throwable $e) {
             return $this->error('Unauthorized or Task not found', 403, $e);
+        }
+    }
+     
+     public function update(UpdateTaskRequest $request, Task $task): JsonResponse
+    {
+        try {
+            $this->authorize('update', $task);
+            $task->update($request->validated());
+            return $this->success(new TaskResource($task), 'Task updated successfully');
+        } catch (\Throwable $e) {
+            return $this->error('Failed to update task', 500, $e);
         }
     }
 }
