@@ -4,7 +4,7 @@ This repository contains the **Backend REST API** for a Laravel + Vue.js CRUD ap
 The backend is built with **Laravel**, secured using **Laravel Sanctum**, and provides authentication, profile management, and task management APIs.
 
 👉 **Frontend:** Built with **Vue.js**  
-🔗 Frontend Repository: https://github.com/sohelsamy1/laravel-vuejs-crud-frontend
+🔗 Frontend Repository: https://github.com/sohelsamy1/laravel-vuejs-crud-frontend  
 👉 **Screenshots & demo video:** Will be added later
 
 ---
@@ -100,7 +100,7 @@ php artisan serve
 
 ```
 
-##🔐 Authentication Notes
+## 🔐 Authentication Notes
 
 Authentication is handled using Laravel Sanctum
 All protected routes require a valid Bearer Token
@@ -108,7 +108,6 @@ All protected routes require a valid Bearer Token
 ## Frontend
 
 The frontend is developed separately using Vue.js and consumes this API.
-Frontend repository link will be added soon.
 
 ## Screenshots & Demo
 
@@ -117,7 +116,7 @@ Screenshots and demo video will be added in future updates.
 ## Author
 
 Sohel Samy
-- GitHub: https://github.com/sohelsamy1
+- GitHub: https://github.com/sohelsamy1  
 - LinkedIn: https://linkedin.com/in/sohelsamy
 
 ⭐ If you like this project, feel free to star the repository.

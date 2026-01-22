@@ -29,7 +29,8 @@ Route::prefix('v1')->group(function () {
 
         // Get trashed tasks
         Route::get('/tasks/summary', [TaskController::class, 'summary']);
-
+        
+        Route::get('/tasks/trashed', [TaskController::class, 'trashed']);
         Route::post('tasks/{id}/restore', [TaskController::class, 'restore']);
         Route::delete('tasks/{id}/force', [TaskController::class, 'forceDelete']);
         Route::patch('tasks/{task}/status', [TaskController::class, 'updateStatus']);
